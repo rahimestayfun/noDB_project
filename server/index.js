@@ -11,7 +11,6 @@ app.use(express.json());
 //ENDPOINTS
 app.get("/api/recipes", getRecipes);
 app.post("/api/recipes", addRecipe);
-
 app.delete('/api/recipes/:id', deleteRecipe);
 app.put("/api/recipes/:id", editRecipe);
 

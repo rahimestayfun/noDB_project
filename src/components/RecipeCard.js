@@ -1,7 +1,7 @@
 import React from 'react'
 import RecipeContent from "./RecipeContent"
 import EditRecipe from './EditRecipe'
-// import '../styles/RecipeCard.css'
+import '../styles/RecipeCard.css'
 // import "../styles/App.css"
 
 
@@ -12,7 +12,6 @@ export default class RecipeCard extends React.Component {
         this.state = {}
     }
   
-
     render() {
         return (
             <div>
@@ -40,7 +39,7 @@ export default class RecipeCard extends React.Component {
                                 hide={this.props.hide}
                             />
                             :
-                            <div>
+                            <div className="basic_recipe_card">
                                 <img className="recipe_image" alt="food" src={this.props.imageUrl} />
                                 <h2 className="recipe_title"> {this.props.title} </h2>
                                 <div className="button_list">

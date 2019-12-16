@@ -1,0 +1,43 @@
+.content{
+    width: 319px;
+    min-height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+    color: rgb(44, 37, 37);
+    background-color:rgb(185, 226, 221);
+    /* font-family: 'Lobster Two', cursive; */
+    font-family: 'McLaren', cursive;
+    word-wrap: break-word;
+    border-radius: 10px;
+}
+.content h3{
+    text-align: center;
+    background-color: whitesmoke;
+    font-family: 'Lobster Two', cursive;
+}
+
+.content-title{
+    margin-bottom: 16px;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Lobster Two', cursive;
+}
+.content-ingredients{
+    margin-bottom: 15px;
+    margin-top: 5px;
+    font-size: 14px;
+}
+.content-directions{
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 14px;
+
+}
+.content-button{
+    
+    margin-left: 100px;
+    /* border: 1px solid white; */
+    background-color: whitesmoke;
+   
+}

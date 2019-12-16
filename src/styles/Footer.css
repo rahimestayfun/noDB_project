@@ -1,7 +1,18 @@
 .footer{
     width: 100%;
     height: 65px;
-    background-color: rgb(202, 231, 227);
+    /* position: fixed; */
+    left: 0;
+    bottom: 0;
+    background-color:rgb(161, 212, 206);
     text-align: center;
     font-size: 25px;
+    font-family: 'Lobster Two', cursive;
+}
+
+.footer h2{
+    font-size: larger;
+}
+.footer img{
+    margin-left: 10px;
 }

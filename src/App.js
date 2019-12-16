@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 import './reset.css'
 import axios from "axios"
-import "./styles/App.css"
+import "./styles/RecipeCard.css"
 
 //COMPONENTS
 import AddRecipe from "./components/AddRecipe";
 import Navbar from './components/Navbar';
 import Footer from "./components/Footer";
 import RecipeCard from "./components/RecipeCard"
-
 
 
 class App extends Component {
@@ -27,7 +26,7 @@ class App extends Component {
       this.setState({
         recipes: response.data
       })
-    }).catch((error)=>console.log(error))
+    }).catch((error) => console.log(error))
   }
 
   updateRecipes = (newRecipes) => {
@@ -38,35 +37,30 @@ class App extends Component {
     console.log("show")
     this.setState({ showContent: true })
   }
-  hide=()=>{
-    this.setState({showContent:false})
+  hide = () => {
+    this.setState({ showContent: false })
   }
 
   edit = () => {
     this.setState({ editStatus: true })
   }
-  // hideEdit=()=>{
-  //   this.setState({ editStatus: false })
-  // }
+  hideEdit=()=>{
+    this.setState({ editStatus: false })
+  }
 
   deleteRecipe = (id) => {
     axios.delete(`/api/recipes/${id}`).then(response => {
       this.setState({ recipes: response.data })
     })
   }
-  
- 
-  editRecipe = (id,body) => {
-     axios.put(`/api/recipes/${id}`, body).then(response => {
-      this.setState({recipes : response.data })
+
+
+  editRecipe = (id, body) => {
+    axios.put(`/api/recipes/${id}`, body).then(response => {
+      this.setState({ recipes: response.data })
     })
-    this.setState({editStatus: false})
+    this.setState({ editStatus: false })
   }
-
-
-
-  
-
 
   render() {
 
@@ -83,10 +77,11 @@ class App extends Component {
             show={this.show}
             showContent={this.state.showContent}
             id={element.id}
-            edit ={this.edit}
+            edit={this.edit}
             editStatus={this.state.editStatus}
             hide={this.hide}
-            recipes= {this.state.recipes}
+            hideEdit= {this.hideEdit}
+            recipes={this.state.recipes}
           />
         </div>
       )
@@ -107,7 +102,7 @@ class App extends Component {
 
         </main>
         <footer>
-          <Footer />
+          <Footer/>
         </footer>
 
       </div>
@@ -115,3 +110,5 @@ class App extends Component {
   }
 }
 export default App
+
+
