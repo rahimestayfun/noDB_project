@@ -4,8 +4,6 @@ import EditRecipe from './EditRecipe'
 import '../styles/RecipeCard.css'
 // import "../styles/App.css"
 
-
-
 export default class RecipeCard extends React.Component {
     constructor(props) {
         super(props)

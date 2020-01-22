@@ -8,29 +8,46 @@
     /* border:1px solid rgb(216, 216, 216); */
     border-top: 2px ridge rgb(236, 229, 229);
     border-bottom: 2px ridge rgb(236, 229, 229);
-    padding: 10px;
+    padding: 5px;
     text-align: center; 
     margin:50px 30px;
     box-sizing: border-box; 
     font-family: 'Lobster Two', cursive;
     cursor:text;
 }
-.edit-container input{
+.edit-container textarea{
     background-color: whitesmoke;
+}
+.title{
+    height: 25px;
+    width: 290px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    
+     
+}
+.image{
+    margin: 10px;
+    height: 40px;
+    text-align: center;
+
 }
 .edit-container h2{
     font-size: 20px;
 }
-.edit-container input{
+.ingredients{
     margin: 10px;
-    line-height: 50px;
+    height: 95px;
+}
+.directions{
+    margin: 10px;
+    height: 95px;
 }
 .button-list{
     display:inline-flex;
     margin: 10px auto;
     font-family: 'Lobster Two', cursive;
-
-  
 }
 .save-button{
     font-size: 20px;

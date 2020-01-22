@@ -35,17 +35,17 @@ export default class EditRecipe extends Component {
         return (
             <div className="edit-container">
                 <h2>Title</h2>
-                <input onChange={this.updateTitle} value={this.state.title} />
+                <textarea className="title" onChange={this.updateTitle} value={this.state.title} />
                
                 <h2>Image</h2>
-                <input onChange={this.updateImageUrl} value={this.state.imageUrl}/>
+                <textarea className="image" onChange={this.updateImageUrl} value={this.state.imageUrl}/>
 
                 <h2>ingredients</h2>
-                <input onChange={this.updateIngredients} value={this.state.ingredients}/>
+                <textarea  className="ingredients"onChange={this.updateIngredients} value={this.state.ingredients}/>
 
                 <h2>directions</h2>
-                <input onChange={this.updateDirections} value={this.state.directions}/>
-
+                <textarea className="directions" onChange={this.updateDirections} value={this.state.directions}/>
+                
                 <div className="button-list">
                 <button className="save-button" onClick={()=>{
                     
