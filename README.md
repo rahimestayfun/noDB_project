@@ -1,5 +1,5 @@
  ### My Recipe Book
- *This mini project was built with Html, Css and React for adding your personal recipes with adding, showing, updating, and deleting functionalities and all data was stored in database.*
+ *This mini project was built with Html, Css and React for adding recipes with adding, showing, updating, and deleting functionalities. All data was stored in database.*
  
  #### Home view
  ![recipe-book-1](https://user-images.githubusercontent.com/48423512/78097248-6c2c6880-73a1-11ea-98a6-9cb68afd26c4.png)
