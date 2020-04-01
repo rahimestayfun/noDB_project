@@ -1,43 +1,37 @@
 .content{
     width: 319px;
-    min-height: 100%;
-    padding: 10px;
+    padding: 10px 20px 15px 20px;
     box-sizing: border-box;
-    font-size: 18px;
+    font-size: 17px;
     color: rgb(44, 37, 37);
     background-color:rgb(185, 226, 221);
-    /* font-family: 'Lobster Two', cursive; */
-    font-family: 'McLaren', cursive;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     word-wrap: break-word;
     border-radius: 10px;
+    position: relative;
+    z-index:5;
+    line-height: 25px;
 }
-.content h3{
+
+li:hover{
+    background-color:#ffb6b9;
+}
+.content h2{
     text-align: center;
-    background-color: whitesmoke;
-    font-family: 'Lobster Two', cursive;
+    background-color:white;
+    font-weight: bold;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 10px 0;
 }
 
 .content-title{
     margin-bottom: 16px;
     text-align: center;
-    font-size: 25px;
-    font-family: 'Lobster Two', cursive;
+    font-size: 22px;
+    background-color:#ffb6b9;
 }
-.content-ingredients{
-    margin-bottom: 15px;
-    margin-top: 5px;
-    font-size: 14px;
-}
-.content-directions{
-    margin-top: 5px;
-    margin-bottom: 15px;
-    font-size: 14px;
 
-}
 .content-button{
-    
     margin-left: 100px;
-    /* border: 1px solid white; */
-    background-color: whitesmoke;
-   
+    background-color: whitesmoke; 
 }

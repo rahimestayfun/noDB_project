@@ -7,8 +7,8 @@ export default class AddRecipe extends Component {
         super();
 
         this.state = {
-            title: '',
-            imageUrl: '',
+            recipe_title: '',
+            recipe_img: '',
             ingredients: [],
             directions: [],
         }
@@ -20,10 +20,10 @@ export default class AddRecipe extends Component {
 
     }
     updateTitle(e) {
-        this.setState({ title: e.target.value })
+        this.setState({ recipe_title: e.target.value })
     }
     updateImageUrl(e) {
-        this.setState({ imageUrl: e.target.value })
+        this.setState({ recipe_img: e.target.value })
     }
     updateIngredients(e) {
         this.setState({ ingredients: e.target.value })
@@ -35,25 +35,18 @@ export default class AddRecipe extends Component {
     //we will send this post request via body, it will ask for the second parameter,but I don't want to send additional info.
 
     handleClick() {
-        // let body={title, imgUrl,ingredients, directions}
-        let { title, imageUrl, ingredients, directions } = this.state;
-        let body = { title, imageUrl, ingredients: [ingredients], directions: [directions] };
+        let { recipe_title, recipe_img, ingredients, directions } = this.state;
+        let body = {recipe_title, recipe_img, ingredients, directions};
         axios.post("/api/recipes", body).then(response => {
-            this.props.updateRecipes(response.data);
+            this.props.getRecipes();
         });
         this.setState({
-            title: '',
-            imageUrl: '',
+            recipe_title: '',
+            recipe_img: '',
             ingredients:'',
             directions: ''
         })
     }
-
-    // value={this.state.title}
-    // value={this.state.imageUrl}
-    // value= {this.state.ingredients}
-    // value={this.state.directions}
-
 
  
     render() {
@@ -61,13 +54,12 @@ export default class AddRecipe extends Component {
         return (
             <div className="add_recipe_container">
                 <div className="add_recipe_input">
-                    <input onChange={this.updateTitle} value={this.state.title} placeholder="recipe title" />
-                    <input onChange={this.updateImageUrl} value={this.state.imageUrl} placeholder="image URL" />
-                    <input onChange={this.updateIngredients}value= {this.state.ingredients} placeholder="ingredients" />
-                    <input onChange={this.updateDirections} value={this.state.directions} placeholder="directions" />
-                    </div>
-                    <button className="add_recipe_button"
-                        onClick={this.handleClick}>Start By Adding</button>
+                    <textarea onChange={this.updateTitle} value={this.state.recipe_title} placeholder="recipe title" />
+                    <textarea onChange={this.updateImageUrl} value={this.state.recipe_img} placeholder="image URL" />
+                    <textarea onChange={this.updateIngredients}value= {this.state.ingredients} placeholder="ingredients" />
+                    <textarea onChange={this.updateDirections} value={this.state.directions} placeholder="directions" />
+                </div>
+                <button className="add_recipe_button" onClick={this.handleClick}>Start By Adding</button>
                 
 
             </div>

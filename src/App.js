@@ -15,24 +15,22 @@ class App extends Component {
     super();
     this.state = {
       recipes: [],
-      showContent: false,
-      editStatus: false,
+      showContent: false
     }
   }
 
   componentDidMount() {
-    axios.get("/api/recipes").then(response => {
-      console.log(response.data)
-      this.setState({
-        recipes: response.data
-      })
-    }).catch((error) => console.log(error))
+   this.getRecipes()
   }
 
-  updateRecipes = (newRecipes) => {
-    this.setState({ recipes: newRecipes })
-  }
-
+  getRecipes=()=>{
+    axios.get("/api/recipes")
+    .then(response=>{
+        // console.log(response.data)
+        this.setState({recipes: response.data})
+    })
+    .catch(()=>console.log('Error in sending the response.'))
+}
   show = () => {
     console.log("show")
     this.setState({ showContent: true })
@@ -44,43 +42,34 @@ class App extends Component {
   edit = () => {
     this.setState({ editStatus: true })
   }
-  hideEdit=()=>{
-    this.setState({ editStatus: false })
-  }
+ 
 
   deleteRecipe = (id) => {
     axios.delete(`/api/recipes/${id}`).then(response => {
-      this.setState({ recipes: response.data })
+      this.getRecipes();
     })
   }
 
-
   editRecipe = (id, body) => {
     axios.put(`/api/recipes/${id}`, body).then(response => {
-      this.setState({ recipes: response.data })
+      this.getRecipes();
     })
     this.setState({ editStatus: false })
   }
 
   render() {
-
     let mappedRecipes = this.state.recipes.map((element, index) => {
       return (
         <div key={index}>
           <RecipeCard
-            title={element.title}
+            id = {element.recipe_id}
+            recipe_title={element.recipe_title}
             ingredients={element.ingredients}
             directions={element.directions}
-            imageUrl={element.imageUrl}
+            recipe_img={element.recipe_img}
             deleteRecipe={this.deleteRecipe}
             editRecipe={this.editRecipe}
-            show={this.show}
-            showContent={this.state.showContent}
-            id={element.id}
-            edit={this.edit}
-            editStatus={this.state.editStatus}
-            hide={this.hide}
-            hideEdit= {this.hideEdit}
+            getRecipes={this.getRecipes}
             recipes={this.state.recipes}
           />
         </div>
@@ -93,9 +82,8 @@ class App extends Component {
         </header>
 
         <main>
-          <AddRecipe
-            updateRecipes={this.updateRecipes}
-          />
+          <AddRecipe getRecipes={this.getRecipes}/>
+        
           <div className="recipe_list_container">
             {mappedRecipes}
           </div>

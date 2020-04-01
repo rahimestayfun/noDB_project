@@ -1,49 +1,33 @@
 .edit-container{
     width: 319px;
-    height: 500px;
+    min-height: 500px;
     display: flex;
     flex-direction: column;
     background-color:rgb(185, 226, 221);
     border-radius: 10px;
-    /* border:1px solid rgb(216, 216, 216); */
-    border-top: 2px ridge rgb(236, 229, 229);
-    border-bottom: 2px ridge rgb(236, 229, 229);
-    padding: 5px;
+    /* border-top: 2px ridge rgb(236, 229, 229); */
+    /* border-bottom: 2px ridge rgb(236, 229, 229); */
+    padding: 10px;
+    box-sizing: border-box;
     text-align: center; 
     margin:50px 30px;
     box-sizing: border-box; 
     font-family: 'Lobster Two', cursive;
     cursor:text;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .edit-container textarea{
     background-color: whitesmoke;
+    min-height: 10px;
+    line-height: 20px;
+    margin: 10px 5px;
+    font-size: 17px;
 }
-.title{
-    height: 25px;
-    width: 290px;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 15px;
-    
-     
-}
-.image{
-    margin: 10px;
-    height: 40px;
-    text-align: center;
 
-}
 .edit-container h2{
     font-size: 20px;
 }
-.ingredients{
-    margin: 10px;
-    height: 95px;
-}
-.directions{
-    margin: 10px;
-    height: 95px;
-}
+
 .button-list{
     display:inline-flex;
     margin: 10px auto;
@@ -58,8 +42,6 @@
     cursor: pointer;
   }
 .cancel-button{
-    /* width: 40%;
-    height: 10%; */
     font-size: 20px;
     background-color:whitesmoke;
     margin-left: 40px;

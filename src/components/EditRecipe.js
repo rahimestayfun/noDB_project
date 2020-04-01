@@ -5,22 +5,17 @@ export default class EditRecipe extends Component {
     constructor(props){
         super(props);
         this.state = {
-            title: this.props.title,
-            imageUrl:this.props.imageUrl,
+            recipe_title: this.props.recipe_title,
+            recipe_img:this.props.recipe_img,
             ingredients:this.props.ingredients,
             directions:this.props.directions,  
         }
-             
-    // this.updateTitle = this.updateTitle.bind(this);
-    // this.updateImageUrl = this.updateImageUrl.bind(this);
-    // this.updateIngredients = this.updateIngredients.bind(this);
-    // this.updateDirections = this.updateDirections.bind(this); 
     }
     updateTitle= (e)=> { 
-        this.setState({title: e.target.value})
+        this.setState({recipe_title: e.target.value})
     }
     updateImageUrl=(e)=>{
-        this.setState({ imageUrl: e.target.value})
+        this.setState({recipe_img: e.target.value})
     }
     updateIngredients=(e)=>{
         this.setState({ingredients: e.target.value})
@@ -30,31 +25,30 @@ export default class EditRecipe extends Component {
     }
    
     render() {
-        console.log(this.state.title);
-        console.log(this.props.title);
         return (
             <div className="edit-container">
                 <h2>Title</h2>
-                <textarea className="title" onChange={this.updateTitle} value={this.state.title} />
+                <textarea className="title" onChange={this.updateTitle} value={this.state.recipe_title} />
                
                 <h2>Image</h2>
-                <textarea className="image" onChange={this.updateImageUrl} value={this.state.imageUrl}/>
+                <textarea className="image" onChange={this.updateImageUrl} value={this.state.recipe_img}/>
 
-                <h2>ingredients</h2>
+                <h2>Ingredients</h2>
                 <textarea  className="ingredients"onChange={this.updateIngredients} value={this.state.ingredients}/>
 
-                <h2>directions</h2>
+                <h2>Directions</h2>
                 <textarea className="directions" onChange={this.updateDirections} value={this.state.directions}/>
                 
                 <div className="button-list">
                 <button className="save-button" onClick={()=>{
                     
-                    let {title,imageUrl,ingredients,directions} = this.state
-                    let recipe= {title,imageUrl,ingredients:[ingredients],directions:[directions]}
-                    this.props.editRecipe(this.props.id,recipe)
+                    let {recipe_title,recipe_img,ingredients,directions} = this.state
+                    let recipe= {recipe_title,recipe_img,ingredients,directions}
+                    this.props.editRecipe(this.props.id,recipe);
+                    this.props.toggleEditRecipe();
                     
                     }}>Save</button>
-                <button className="cancel-button" onClick={this.props.hideEdit}>Cancel</button>
+                <button className="cancel-button" onClick={this.props.toggleEditRecipe}>Cancel</button>
                 </div>
 
                 

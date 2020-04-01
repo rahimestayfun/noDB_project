@@ -1,32 +1,38 @@
-import React, { Component } from 'react'
-import "../styles/RecipeContent.css"
+import React, { Component } from "react";
+import "../styles/RecipeContent.css";
 
 export default class RecipeContent extends Component {
-    constructor() {
-        super();
-        this.state = {}
-    }
+  constructor() {
+    super();
+    this.state = {}
+  }
 
-    render() {
-        console.log(this.props.ingredients);
-        return (
-            <div className="content">
-                <h2 className="content-title">{this.props.title}</h2>
+  render() {
+    const mappedIngredients = this.props.ingredients.split(',').map((el,i)=>{
+      return <li key={i}>{el}</li>
+    })
+    const mappedDirections = this.props.directions.split('.').map((el,i)=>{
+      return <li key={i}>{el}</li>
+    })
 
-                <h3>Ingredients</h3>
-                <div className="content-ingredients">{this.props.ingredients.map((el, i) => {
-                    return <li key={i}> {el}</li>
-                })}</div>
+    return (
+        <div className="content">
+          <h2 className="content-title">{this.props.recipe_title}</h2>
+          <h2>Ingredients</h2>
+          <ul>
+          {mappedIngredients}
+          </ul>
+          
+          <h2>Directions</h2>
+          <ol>{mappedDirections}</ol>
 
-                <h3>Directions</h3>
-                <div className="content-directions">{this.props.directions.map((el, i) => {
-                    return <li key={i}> {el}</li>
-                })}</div>
-                <button className="content-button"
-                    onClick={this.props.hide}> Hide</button>
-
-            </div>
-        )
-    }
+          <button
+            className="content-button"
+            onClick={this.props.toggleRecipeContent}
+          >
+            Hide
+          </button>
+        </div>
+    );
+  }
 }
-

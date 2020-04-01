@@ -5,10 +5,10 @@
     box-sizing: border-box;
     padding: 25px 0 0 0;
     font-family: 'Lobster Two', cursive;
+    padding-left: 10px;
     }
 h1{
     color: rgb(39, 38, 38);
-    font-size: 3em;
+    font-size:40px;
     font-weight: bold;
-    
     }
